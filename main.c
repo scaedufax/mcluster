@@ -235,13 +235,6 @@ int main (int argv, char **argc) {
             }
 		case 'D': 
             D = atof(optarg);
-            if (D == 3.0 || D == 2.6 || D == 2.0 || D == 1.6)
-                break;
-            else {
-                printf("\nError: Fractal dimension (D) needs to "
-                    "be 1.6, 2.0, 2.6 or 3.0, %f was given\n", D);
-                exit(1);
-            }
 		case 'T':
             tcrit = atof(optarg);
             break;
