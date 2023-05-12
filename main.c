@@ -45,6 +45,7 @@
 #include<string.h>
 #include<sys/stat.h>
 #include<getopt.h>
+#include<float.h>
 #ifdef GPU
 #include <cuda.h>
 #include <cuda_runtime.h>
@@ -2050,7 +2051,7 @@ int generate_plummer(int N, double **star, double rtide, double rvir, double D, 
 		}
 	} else {
 		double xcut;
-		xcut = 0.000;
+		xcut = FLT_MIN;
 		while (1.0/sqrt(pow(xcut,-2.0/3.0) - 1.0)<=rcut) xcut+=0.00001;
 
 		fractalize(D, N, star, 1, symmetry);
